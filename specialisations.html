@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Technical Specialisations — Vishnu Saketh Nanduri</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Anton&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&f[]=satoshi@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#0B0B0B;
+  --cream:#F8F6F1;
+  --white:#FFFFFF;
+  --red:#E50914;
+  --darkgray:#1A1A1A;
+  --lightgray:#DADADA;
+  --display: 'Anton', 'Bebas Neue', sans-serif;
+  --heading: 'Clash Display', 'Space Grotesk', sans-serif;
+  --body: 'Satoshi', 'Space Grotesk', sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:var(--body);
+  background:var(--cream);
+  color:var(--black);
+  overflow-x:hidden;
+}
+.inner-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 80px 24px;
+}
+.back-home {
+  font-family: var(--heading);
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: var(--red);
+  letter-spacing: 1px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 40px;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+.back-home:hover {
+  transform: translateX(-5px);
+}
+.display-title {
+  font-family: var(--display);
+  font-size: clamp(40px, 7vw, 90px);
+  line-height: 0.95;
+  text-transform: uppercase;
+  margin-bottom: 60px;
+}
+.accent { color: var(--red); }
+
+.spec-list {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.spec-item {
+  scroll-margin-top: 40px;
+  background: var(--white);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 24px;
+  padding: 40px;
+  transition: all 0.4s ease;
+}
+.spec-item:hover {
+  box-shadow: 0 30px 60px rgba(0,0,0,0.06);
+  border-color: var(--red);
+}
+.spec-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.spec-icon {
+  width: 48px;
+  height: 48px;
+  color: var(--red);
+}
+.spec-title {
+  font-family: var(--heading);
+  font-size: clamp(20px, 3vw, 28px);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.spec-desc {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--darkgray);
+  opacity: 0.9;
+  margin-bottom: 24px;
+}
+.tech-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.tech-pill {
+  font-family: var(--heading);
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 8px 16px;
+  background: rgba(229, 9, 20, 0.05);
+  border: 1px solid rgba(229, 9, 20, 0.15);
+  border-radius: 100px;
+  color: var(--red);
+}
+</style>
+</head>
+<body>
+
+<div class="inner-container">
+  <a href="index.html#specialisation" class="back-home">← Back to Portfolio</a>
+  
+  <h1 class="display-title">Technical <br><span class="accent">Specialisations.</span></h1>
+  
+  <div class="spec-list">
+    <div id="frontend" class="spec-item">
+      <div class="spec-header">
+        <svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/><path d="m9 9-2 2 2 2M15 9l2 2-2 2"/></svg>
+        <h2 class="spec-title">Frontend Development</h2>
+      </div>
+      <p class="spec-desc">I design and program responsive, visually stunning web interfaces with a focus on seamless interactivity. I prioritize writing modular component trees, managing centralized application states, optimizing bundle sizes for quick loads, and ensuring robust WCAG accessibility standards across all browsers.</p>
+      <div class="tech-pills">
+        <span class="tech-pill">React</span>
+        <span class="tech-pill">Next.js</span>
+        <span class="tech-pill">Tailwind CSS</span>
+        <span class="tech-pill">TypeScript</span>
+        <span class="tech-pill">HTML5/CSS3</span>
+        <span class="tech-pill">GSAP Animations</span>
+      </div>
+    </div>
+
+    <div id="backend" class="spec-item">
+      <div class="spec-header">
+        <svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="6" rx="1.5"/><rect x="3" y="15" width="18" height="6" rx="1.5"/><circle cx="7" cy="6" r=".8" fill="currentColor" stroke="none"/><circle cx="7" cy="18" r=".8" fill="currentColor" stroke="none"/></svg>
+        <h2 class="spec-title">Backend Development</h2>
+      </div>
+      <p class="spec-desc">I build robust, secure, and highly scalable server ecosystems and API architectures. My focus is on writing clean routing logic, managing secure token-based user authentication protocols (JWT), structuring data modeling pipelines, and ensuring servers maintain fast, steady response times during concurrent request spikes.</p>
+      <div class="tech-pills">
+        <span class="tech-pill">Node.js</span>
+        <span class="tech-pill">Express.js</span>
+        <span class="tech-pill">RESTful APIs</span>
+        <span class="tech-pill">JWT Auth</span>
+        <span class="tech-pill">MVC Architecture</span>
+      </div>
+    </div>
+
+    <div id="databases" class="spec-item">
+      <div class="spec-header">
+        <svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/><path d="M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg>
+        <h2 class="spec-title">Databases</h2>
+      </div>
+      <p class="spec-desc">I design, query, and manage scalable relational and non-relational structures. I specialize in schema design and normalization, structuring high-performance pipelines, and tuning database indexing properties to minimize read/write query latencies in production environments.</p>
+      <div class="tech-pills">
+        <span class="tech-pill">MongoDB</span>
+        <span class="tech-pill">MySQL</span>
+        <span class="tech-pill">PostgreSQL</span>
+        <span class="tech-pill">Mongoose</span>
+        <span class="tech-pill">Database Normalisation</span>
+      </div>
+    </div>
+
+    <div id="tools" class="spec-item">
+      <div class="spec-header">
+        <svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 18a4 4 0 0 1-1-7.9A5 5 0 0 1 15.9 8H17a4 4 0 0 1 0 8H7Z"/></svg>
+        <h2 class="spec-title">Tools &amp; Cloud</h2>
+      </div>
+      <p class="spec-desc">I configure automated containerization pipelines and modern hosting environments for rapid software deployment. Using advanced Git version control, isolated Docker runtime containers, and robust hosting systems, I maintain safe production cycles and continuous integration setups.</p>
+      <div class="tech-pills">
+        <span class="tech-pill">Git / GitHub</span>
+        <span class="tech-pill">Docker</span>
+        <span class="tech-pill">Firebase</span>
+        <span class="tech-pill">Vercel</span>
+        <span class="tech-pill">Netlify</span>
+        <span class="tech-pill">CI/CD Pipelines</span>
+      </div>
+    </div>
+
+    <div id="others" class="spec-item">
+      <div class="spec-header">
+        <svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/><circle cx="12" cy="12" r="4"/></svg>
+        <h2 class="spec-title">Others</h2>
+      </div>
+      <p class="spec-desc">I apply core computer science principles to engineer efficient computational systems. I focus on selecting the best Data Structures &amp; Algorithms (DSA) to reduce algorithm runtime complexities, managing low-level system memory footprints, and applying clean design patterns to large-scale applications.</p>
+      <div class="tech-pills">
+        <span class="tech-pill">DSA</span>
+        <span class="tech-pill">System Design</span>
+        <span class="tech-pill">Software Architecture</span>
+        <span class="tech-pill">Problem Solving</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+  const hash = window.location.hash;
+  if(hash) {
+    const el = document.querySelector(hash);
+    if(el) {
+      setTimeout(() => {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }
+  }
+});
+</script>
+</body>
+</html>

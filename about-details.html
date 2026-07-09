@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Vishnu Saketh Nanduri — Journey & Philosophy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Anton&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&f[]=satoshi@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#0B0B0B;
+  --cream:#F8F6F1;
+  --white:#FFFFFF;
+  --red:#E50914;
+  --darkgray:#1A1A1A;
+  --lightgray:#DADADA;
+  --display: 'Anton', 'Bebas Neue', sans-serif;
+  --heading: 'Clash Display', 'Space Grotesk', sans-serif;
+  --body: 'Satoshi', 'Space Grotesk', sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:var(--body);
+  background:var(--cream);
+  color:var(--black);
+  overflow-x:hidden;
+}
+.inner-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 24px;
+}
+.back-home {
+  font-family: var(--heading);
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: var(--red);
+  letter-spacing: 1px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 40px;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+.back-home:hover {
+  transform: translateX(-5px);
+}
+.display-title {
+  font-family: var(--display);
+  font-size: clamp(40px, 7vw, 90px);
+  line-height: 0.95;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+.accent { color: var(--red); }
+
+.grid-layout {
+  display: grid;
+  grid-template-columns: 1.22fr 0.78fr;
+  gap: 50px;
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .grid-layout { grid-template-columns: 1fr; }
+}
+
+.story-rich {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--darkgray);
+}
+.story-rich p {
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+.story-rich h3 {
+  font-family: var(--heading);
+  font-size: 22px;
+  text-transform: uppercase;
+  margin-top: 36px;
+  margin-bottom: 14px;
+  color: var(--black);
+}
+
+.liquid-glass-sidebar {
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 24px;
+  padding: 32px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.04);
+}
+.sidebar-title {
+  font-family: var(--heading);
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+  color: var(--red);
+}
+.info-pair {
+  margin-bottom: 20px;
+}
+.info-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--darkgray);
+  opacity: 0.6;
+}
+.info-value {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--black);
+  margin-top: 4px;
+}
+.philosophy-blockquote {
+  font-family: var(--heading);
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 600;
+  line-height: 1.4;
+  border-left: 4px solid var(--red);
+  padding-left: 20px;
+  margin: 28px 0;
+  color: var(--black);
+}
+
+/* Certifications Showcase Block Inside Biography Page */
+.cert-stack-container {
+  margin-top: 40px;
+  background: var(--white);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 24px;
+  padding: 32px;
+}
+.cert-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: center;
+  margin-top: 24px;
+}
+@media (max-width: 640px) {
+  .cert-split { grid-template-columns: 1fr; }
+}
+
+.cert-stack-outer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1200px;
+  height: 300px;
+  position: relative;
+}
+.cert-stack-viewport {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  height: 220px;
+  transform-style: preserve-3d;
+}
+.cert-card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: var(--white);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+  overflow: hidden;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease;
+  cursor: pointer;
+  backface-visibility: hidden;
+  user-select: none;
+}
+.card-glow-red { border-left: 4px solid var(--red); }
+.card-glow-green { border-left: 4px solid #3ebb6e; }
+.card-glow-yellow { border-left: 4px solid #e5b800; }
+
+/* Mini Details Panel inside Bio page */
+.mini-details-pane {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 220px;
+}
+.mini-meta-tag {
+  font-family: var(--heading);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--red);
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+.mini-main-title {
+  font-family: var(--heading);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+.mini-desc {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--darkgray);
+  opacity: 0.8;
+  margin-bottom: 12px;
+}
+.mini-nav-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.mini-nav-btn {
+  font-family: var(--heading);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 10px 18px;
+  border-radius: 100px;
+  transition: all 0.3s;
+}
+.mini-btn-prev { border: 1px solid rgba(0,0,0,0.15); color: var(--black); }
+.mini-btn-prev:hover { background: var(--black); color: var(--white); }
+.mini-btn-next { background: var(--red); color: var(--white); }
+.mini-btn-next:hover { box-shadow: 0 6px 15px rgba(229,9,20,0.2); }
+
+/* FULLSCREEN CERTIFICATE VIEW MODAL */
+.cert-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(11, 11, 11, 0.94);
+  backdrop-filter: blur(16px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  padding: 20px;
+}
+.cert-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal-close-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: var(--red);
+  color: var(--white);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 11000;
+  box-shadow: 0 10px 30px rgba(229,9,20,0.3);
+  transition: transform 0.3s, background-color 0.3s;
+  border: none;
+}
+.modal-close-btn:hover {
+  transform: scale(1.1) rotate(90deg);
+  background: var(--black);
+}
+.modal-viewport {
+  width: 100%;
+  max-width: 1100px;
+  transform: translateY(40px) scale(0.95);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.cert-modal.active .modal-viewport {
+  transform: translateY(0) scale(1);
+}
+.modal-glass-container {
+  background: var(--white);
+  border-radius: 28px;
+  padding: 40px;
+  box-shadow: 0 40px 100px rgba(0,0,0,0.5);
+  color: var(--black);
+  overflow: hidden;
+}
+.modal-split {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  align-items: center;
+}
+@media (max-width: 900px) {
+  .modal-split {
+    grid-template-columns: 1fr;
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+}
+.modal-preview-box {
+  background: #FAF8F5;
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,0.08);
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+  position: relative;
+}
+.modal-preview-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.cert-image-placeholder {
+  padding: 40px;
+  border: 12px double #d4af37;
+  margin: 16px;
+  background: #FAF8F5;
+  text-align: center;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.placeholder-branding {
+  font-family: var(--display);
+  font-size: 24px;
+}
+.placeholder-stamp {
+  font-family: var(--heading);
+  font-weight: 700;
+  color: #3EBB6E;
+  border: 3px solid #3EBB6E;
+  padding: 6px 14px;
+  border-radius: 6px;
+  display: inline-block;
+  margin: 14px auto;
+  transform: rotate(-5deg);
+}
+.modal-text-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.modal-issuer {
+  font-family: var(--heading);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--red);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.modal-title {
+  font-family: var(--heading);
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--black);
+  margin-top: 8px;
+}
+.modal-long-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--darkgray);
+  opacity: 0.85;
+}
+.modal-meta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 24px;
+  border-top: 1px solid rgba(0,0,0,0.08);
+  padding-top: 20px;
+}
+</style>
+</head>
+<body>
+
+<div class="inner-container">
+  <a href="index.html#about" class="back-home">← Back to Portfolio</a>
+  
+  <h1 class="display-title">My Journey <br>&amp; <span class="accent">Philosophy.</span></h1>
+  
+  <div class="grid-layout">
+    <div class="story-rich">
+      <p>I am a computer science student and dedicated Full Stack Developer based in Gayatri Vidya Parishad College for Degree and PG Courses, Visakhapatnam. My learning pathway is driven by custom engineering targets, rigorous self-study, and building accessible web architectures.</p>
+      
+      <div class="philosophy-blockquote">
+        "Great code should be as scalable internally as it is beautiful and intuitive externally."
+      </div>
+      
+      <h3>Key Engineering Principles</h3>
+      <p><strong>Universal Usability:</strong> Constructing highly responsive digital assets that render perfectly across hardware profiles and strict WCAG accessibility regulations.</p>
+      <p><strong>Foundational Depth:</strong> Pairing modern React interfaces with deep system design fundamentals, efficient memory practices, and algorithm optimization routines.</p>
+      
+      <h3>Future Roadmap</h3>
+      <p>I plan to continue exploring localized predictive AI model quantizations, edge deployments, and high-performance server clusters inside my development lab pipelines.</p>
+
+      <!-- Integrated credentials viewer driven by the 15-License centralized dataset -->
+      <div class="cert-stack-container">
+        <h3 style="margin-top:0px; margin-bottom:4px;">Badges &amp; Credentials</h3>
+        <p style="font-size:14px; line-height:1.6; opacity:0.8;">Dynamic credential viewer showcasing completed certifications, specialized achievements, and verified technical outcomes.</p>
+        
+        <div class="cert-split">
+          <!-- Stack viewport -->
+          <div class="cert-stack-outer" id="deckContainer">
+            <div class="cert-stack-viewport" id="cert-deck">
+              <!-- Dynamically populated certificate card layers -->
+            </div>
+          </div>
+          
+          <!-- Sync Details Viewer Side Pane -->
+          <div class="mini-details-pane">
+            <div>
+              <span class="mini-meta-tag" id="active-cert-issuer">LOADING...</span>
+              <h4 class="mini-main-title" id="active-cert-title">---</h4>
+              <p class="mini-desc" id="active-cert-desc">---</p>
+            </div>
+            
+            <div class="mini-nav-row">
+              <button class="mini-nav-btn mini-btn-prev" id="cert-prev-btn">←</button>
+              <button class="mini-nav-btn mini-btn-next" id="cert-next-btn">Next →</button>
+              <button class="mini-nav-btn" id="viewAssetBtn" style="background: var(--black); color: var(--white);">View ↗</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="liquid-glass-sidebar">
+      <div class="sidebar-title">Quick Facts</div>
+      
+      <div class="info-pair">
+        <div class="info-label">Full Name</div>
+        <div class="info-value">Vishnu Saketh Nanduri</div>
+      </div>
+      <div class="info-pair">
+        <div class="info-label">Current Role</div>
+        <div class="info-value">Full Stack Developer &amp; CSE Student</div>
+      </div>
+      <div class="info-pair">
+        <div class="info-label">Affiliation</div>
+        <div class="info-value">GVP College for Degree &amp; PG Courses</div>
+      </div>
+      <div class="info-pair">
+        <div class="info-label">Based in</div>
+        <div class="info-value">Andhra Pradesh, India</div>
+      </div>
+      <div class="info-pair">
+        <div class="info-label">Interests</div>
+        <div class="info-value">System Design, High-Performance UI, AI Automation</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Dynamic Fullscreen View Modal with Close cross -->
+<div class="cert-modal" id="certModal" aria-hidden="true">
+  <div class="modal-viewport">
+    <div class="modal-glass-container">
+      <button class="modal-close-btn" onclick="closeCertModal()" aria-label="Close modal">✕</button>
+      
+      <div class="modal-split">
+        <div class="modal-preview-box">
+          <img src="" alt="Certificate Document Preview" class="modal-preview-img" id="modal-preview-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="cert-image-placeholder" style="display: none; height: 380px;">
+            <div class="placeholder-branding" style="font-family: var(--display); color: var(--black); font-size: 20px;">SAKETH<span>.</span></div>
+            <div class="placeholder-stamp">VERIFIED</div>
+            <h3 style="font-family: var(--heading); font-size: 16px; font-weight: 700; text-transform: uppercase; color: var(--black);">CERTIFICATE OF COMPLETION</h3>
+          </div>
+        </div>
+        
+        <div class="modal-text-box">
+          <div>
+            <span class="modal-issuer" id="modal-issuer">---</span>
+            <h4 class="modal-title" id="modal-title">---</h4>
+            <hr style="border: 0; border-top: 1px solid rgba(0,0,0,0.08); margin: 20px 0;">
+            <p class="modal-long-desc" id="modal-long-desc">---</p>
+          </div>
+          
+          <div>
+            <div class="modal-meta-grid">
+              <div><strong>Verification Authority:</strong><br><span style="font-size: 13px; color: var(--darkgray);">Online Database Registry</span></div>
+              <div><strong>License Status:</strong><br><span style="color: #3EBB6E; font-size: 13px; font-weight: 700;">● Active Production License</span></div>
+            </div>
+            <a href="#" target="_blank" class="btn btn-ghost" id="modal-verify-link" style="margin-top: 30px; display: inline-flex; border: 1px solid var(--black); color: var(--black); background: transparent; padding: 14px 28px; border-radius: 100px; font-family: var(--heading); font-size: 13px; font-weight: 700; text-transform: uppercase; text-decoration: none;">Verify Secure Link ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script>
+const certificationsDatabase = [
+  {
+    name: "CS50x: Introduction to Computer Science",
+    issuer: "Harvard University",
+    date: "Jul 2026",
+    id: "a89f1208-83b-4a1a-81e8-1ba05ade8a5f",
+    skills: ["C", "Python", "SQL", "HTML/CSS", "JavaScript", "Flask", "Git", "Web Dev"],
+    imagePath: "certificates/image_2b133e.jpg",
+    verifyUrl: "https://cs50.harvard.edu/certificates/a89f1208-83b-4a1a-81e8-1ba05ade8a5f",
+    glowClass: "card-glow-red",
+    desc: "Rigorous program covering foundational algorithms, system memory optimizations, database systems, and web architecture setups."
+  },
+  {
+    name: "AWS Cloud Practitioner Essentials",
+    issuer: "Amazon Web Services (AWS)",
+    date: "Jun 2026",
+    id: "AWS-CLOUD-2026-ESS",
+    skills: ["AWS", "Cloud Computing", "Infrastructure", "Cloud Security"],
+    imagePath: "certificates/cert_aws_cloud.jpg",
+    verifyUrl: "https://aws.amazon.com",
+    glowClass: "card-glow-green",
+    desc: "Gained core competency in cloud architecture models, compute resource planning, edge setups, and AWS structural security patterns."
+  },
+  {
+    name: "AI Upskilling Certificate: Hands-On Development",
+    issuer: "Qualcomm",
+    date: "Jun 2026",
+    id: "QUALCOMM-AI-UPSCALE",
+    skills: ["Machine Learning", "Edge AI", "Quantization", "NPU SDKs"],
+    imagePath: "certificates/cert_qualcomm_ai.jpg",
+    verifyUrl: "https://www.qualcomm.com",
+    glowClass: "card-glow-yellow",
+    desc: "Built neural networks optimized for localized on-device processing. Handled Snapdragon quantization models and fast compilation runs."
+  },
+  {
+    name: "Introduction to Claude Cowork",
+    issuer: "Anthropic",
+    date: "May 2026",
+    id: "ANTHROPIC-CLAUDE-COWORK",
+    skills: ["AI Productivity", "Automation", "Cognitive API Pipelines"],
+    imagePath: "certificates/cert_anthropic_cowork.jpg",
+    verifyUrl: "https://www.anthropic.com",
+    glowClass: "card-glow-red",
+    desc: "Constructed workflow automation loops using Anthropic APIs, optimizing context window capacities, and aligning LLM cognitive pipelines."
+  },
+  {
+    name: "Claude Code 101",
+    issuer: "Anthropic",
+    date: "May 2026",
+    id: "ANTHROPIC-CLAUDE-CODE-101",
+    skills: ["AI Coding", "CLI Efficiency", "Modular Workflows"],
+    imagePath: "certificates/cert_anthropic_code.jpg",
+    verifyUrl: "https://www.anthropic.com",
+    glowClass: "card-glow-green",
+    desc: "Specialized in agile engineering systems utilizing terminal-based automated debugging interfaces, continuous integration hooks, and modular setups."
+  }
+];
+
+let activeCertIndex = 0;
+
+function populateDeck() {
+  const swipeDeck = document.getElementById('cert-deck');
+  if (!swipeDeck) return;
+  swipeDeck.innerHTML = '';
+  
+  // Render cards in reverse order so the first naturally stacks on top
+  for (let i = certificationsDatabase.length - 1; i >= 0; i--) {
+    const cert = certificationsDatabase[i];
+    const cardEl = document.createElement('div');
+    cardEl.className = `cert-card ${cert.glowClass}`;
+    cardEl.dataset.index = i;
+    
+    cardEl.innerHTML = `
+      <div style="position: relative; width: 100%; height: 100%; border-radius: 10px; overflow: hidden; background: #FFF;">
+        <img src="${cert.imagePath}" alt="${cert.name}" style="width: 100%; height: 100%; object-fit: cover; display: block;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div style="display: none; width: 100%; height: 100%; background: #FAF8F5; border: 6px double #d4af37; padding: 14px; flex-direction: column; justify-content: space-between; color: #1a1a1a; box-sizing: border-box; position: absolute; inset: 0;">
+          <div style="text-align: center;">
+            <div style="font-family: var(--heading); font-size: 6px; text-transform: uppercase; letter-spacing: 1px; color: #888; font-weight: 700;">CERTIFICATE OF COMPLETION</div>
+            <div style="font-family: var(--heading); font-weight: 700; font-size: 10px; text-transform: uppercase; color: var(--black); line-height: 1.2; margin-top: 3px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 24px;">${cert.name}</div>
+          </div>
+          <div style="text-align: center; margin-top: -4px;">
+            <div style="font-size: 7px; opacity: 0.7; font-style: italic;">Awarded to</div>
+            <div style="font-family: 'Bebas Neue', sans-serif; font-size: 14px; letter-spacing: 0.5px; color: var(--red);">V. SAKETH NANDURI</div>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: flex-end; font-size: 7px;">
+            <div>
+              <div style="opacity: 0.6; text-transform: uppercase; font-size: 4px;">Issuer</div>
+              <div style="font-weight: 700; max-width: 80px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${cert.issuer}</div>
+            </div>
+            <div style="width: 18px; height: 18px; background: #d4af37; border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative;">
+              <div style="width: 14px; height: 14px; border: 1px dashed #fff; border-radius: 50%;"></div>
+            </div>
+            <div style="text-align: right;">
+              <div style="opacity: 0.6; text-transform: uppercase; font-size: 4px;">Date</div>
+              <div style="font-weight: 700;">${cert.date}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+    
+    // Cards navigate deck selection gracefully on interaction click
+    cardEl.addEventListener('click', (e) => {
+      e.stopPropagation();
+      cycleDeck();
+    });
+    
+    swipeDeck.appendChild(cardEl);
+  }
+  
+  arrangeDeck();
+}
+
+function arrangeDeck() {
+  const cards = document.querySelectorAll('.cert-card');
+  cards.forEach(card => {
+    const idx = parseInt(card.dataset.index);
+    let relativePosition = idx - activeCertIndex;
+    
+    if (relativePosition < 0) {
+      relativePosition += certificationsDatabase.length;
+    }
+    
+    const translateZ = -relativePosition * 24;
+    const translateY = relativePosition * 10;
+    const scale = 1 - (relativePosition * 0.04);
+    const zIndex = certificationsDatabase.length - relativePosition;
+    
+    card.style.opacity = relativePosition > 3 ? 0 : (1 - (relativePosition * 0.15));
+    card.style.transform = `translateZ(${translateZ}px) translateY(${translateY}px) scale(${scale})`;
+    card.style.zIndex = zIndex;
+  });
+}
+
+function updateDetailsPane(index) {
+  const cert = certificationsDatabase[index];
+  
+  const issuerEl = document.getElementById('active-cert-issuer');
+  const titleEl = document.getElementById('active-cert-title');
+  const descEl = document.getElementById('active-cert-desc');
+  
+  if (issuerEl) issuerEl.textContent = cert.issuer;
+  if (titleEl) titleEl.textContent = cert.name;
+  if (descEl) descEl.textContent = cert.desc || "Verified competency milestone matching rigorous performance standards.";
+}
+
+function cycleDeck() {
+  const topCard = document.querySelector(`.cert-card[data-index="${activeCertIndex}"]`);
+  if (!topCard) return;
+  
+  gsap.to(topCard, {
+    y: -260,
+    rotate: -6,
+    opacity: 0,
+    duration: 0.45,
+    ease: "power2.inOut",
+    onComplete: () => {
+      activeCertIndex = (activeCertIndex + 1) % certificationsDatabase.length;
+      arrangeDeck();
+      updateDetailsPane(activeCertIndex);
+      
+      gsap.set(topCard, { y: 0, rotate: 0 });
+    }
+  });
+}
+
+function prevDeck() {
+  activeCertIndex = (activeCertIndex - 1 + certificationsDatabase.length) % certificationsDatabase.length;
+  arrangeDeck();
+  updateDetailsPane(activeCertIndex);
+}
+
+// Wire Up navigation controls
+const prevBtn = document.getElementById('cert-prev-btn');
+const nextBtn = document.getElementById('cert-next-btn');
+const assetBtn = document.getElementById('viewAssetBtn');
+
+if (prevBtn) prevBtn.addEventListener('click', prevDeck);
+if (nextBtn) nextBtn.addEventListener('click', cycleDeck);
+if (assetBtn) assetBtn.addEventListener('click', () => openCertModal(activeCertIndex));
+
+/* ---------- MODAL DIALOG MANAGEMENT ---------- */
+const certModal = document.getElementById('certModal');
+const modalPreviewImg = document.getElementById('modal-preview-img');
+
+function openCertModal(index) {
+  const cert = certificationsDatabase[index];
+  if (!certModal) return;
+  
+  document.getElementById('modal-issuer').textContent = cert.issuer;
+  document.getElementById('modal-title').textContent = cert.name;
+  document.getElementById('modal-long-desc').textContent = cert.desc || "Verified competency credential awarded under strict validation parameters, checking system logic and professional capability metrics.";
+  document.getElementById('modal-verify-link').setAttribute('href', cert.verifyUrl);
+  
+  const modalImg = document.getElementById('modal-preview-img');
+  const modalFallback = modalImg.nextElementSibling;
+  
+  modalImg.style.display = 'block';
+  modalFallback.style.display = 'none';
+  modalImg.src = cert.imagePath;
+  
+  certModal.classList.add('active');
+  certModal.setAttribute('aria-hidden', 'false');
+}
+
+function closeCertModal() {
+  if (!certModal) return;
+  certModal.classList.remove('active');
+  certModal.setAttribute('aria-hidden', 'true');
+}
+
+if (certModal) {
+  certModal.addEventListener('click', (e) => {
+    if (e.target === certModal) closeCertModal();
+  });
+}
+
+// Initial Population trigger
+populateDeck();
+updateDetailsPane(0);
+</script>
+</body>
+</html>
