@@ -55,7 +55,6 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 
 #progress-bar{position:fixed;top:0;left:0;height:3px;background:var(--red);z-index:10000;width:0%;transition: width 0.1s linear;}
 
-/* ---------- nav ---------- */
 header{
   position:fixed;top:0;left:0;width:100%;z-index:1000;
   display:flex;align-items:center;justify-content:space-between;
@@ -199,17 +198,18 @@ section{position:relative;width:100%;}
 .btn-primary{background:var(--red);color:var(--white);}
 
 .btn-ghost{
-  border:1px solid rgba(255,255,255,0.08);
-  color:var(--white);
+  border:1px solid var(--black);
+  color:var(--black);
   backdrop-filter:blur(16px) saturate(140%);
   -webkit-backdrop-filter:blur(16px) saturate(140%);
-  background:rgba(255,255,255,0.03);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,0.05), 0 10px 30px rgba(0,0,0,0.1);
+  background:transparent;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.05), 0 10px 30px rgba(0,0,0,0.02);
   transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .btn-ghost:hover{
-  background:rgba(255,255,255,0.08);
-  border-color:rgba(255,255,255,0.2);
+  background:var(--black);
+  border-color:var(--black);
+  color:var(--white);
 }
 .btn:hover{transform:translate3d(0, -2px, 0);}
 .magnetic{transition:transform .25s ease;}
@@ -317,7 +317,7 @@ section{position:relative;width:100%;}
 @media (max-width:640px){.spec-grid{grid-template-columns:1fr 1fr;}}
 @media (max-width:420px){.spec-grid{grid-template-columns:1fr;}}
 
-/* ---------- CREDENTIALS ARCHIVE SECTION ---------- */
+/* ---------- STRUCTURAL CREDENTIALS SECTION ---------- */
 #certifications {
   background: var(--cream);
   color: var(--black);
@@ -345,6 +345,12 @@ section{position:relative;width:100%;}
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+@media (max-width:768px) {
+  .cert-details-pane {
+    min-height: auto;
+    padding: 24px;
+  }
 }
 .cert-meta-tag {
   font-family: var(--heading);
@@ -415,6 +421,12 @@ section{position:relative;width:100%;}
   gap: 16px;
   margin-top: 20px;
 }
+@media (max-width: 480px) {
+  .cert-deck-controls {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
 .cert-nav-btn {
   font-family: var(--heading);
   font-weight: 700;
@@ -424,6 +436,12 @@ section{position:relative;width:100%;}
   padding: 14px 24px;
   border-radius: 100px;
   transition: all 0.3s;
+}
+@media (max-width: 480px) {
+  .cert-nav-btn {
+    width: 100%;
+    text-align: center;
+  }
 }
 #cert-prev-btn {
   border: 1px solid rgba(0,0,0,0.15);
@@ -451,6 +469,11 @@ section{position:relative;width:100%;}
   height: 420px;
   position: relative;
 }
+@media (max-width:768px) {
+  .cert-stack-outer {
+    height: 320px;
+  }
+}
 .cert-stack-viewport {
   position: relative;
   width: 100%;
@@ -458,11 +481,22 @@ section{position:relative;width:100%;}
   height: 270px;
   transform-style: preserve-3d;
 }
-@media (max-width: 480px) {
-  .cert-stack-viewport { max-width: 300px; height: 210px; }
+@media (max-width: 768px) {
+  .cert-stack-viewport {
+    max-width: 280px;
+    height: 200px;
+  }
+}
+@media (max-width: 380px) {
+  .cert-stack-viewport {
+    max-width: 240px;
+    height: 170px;
+  }
 }
 .cert-card {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   border-radius: 14px;
@@ -470,7 +504,6 @@ section{position:relative;width:100%;}
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0 15px 35px rgba(0,0,0,0.08);
   overflow: hidden;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease;
   cursor: pointer;
   backface-visibility: hidden;
   user-select: none;
@@ -533,7 +566,7 @@ section{position:relative;width:100%;}
   display: block;
 }
 
-/* FULLSCREEN CERTIFICATE VIEW MODAL */
+/* ---------- STYLING THE FULLSCREEN CERTIFICATE VIEW MODAL ---------- */
 .cert-modal {
   position: fixed;
   inset: 0;
@@ -547,6 +580,7 @@ section{position:relative;width:100%;}
   pointer-events: none;
   transition: opacity 0.4s ease;
   padding: 20px;
+  will-change: opacity;
 }
 .cert-modal.active {
   opacity: 1;
@@ -693,7 +727,7 @@ section{position:relative;width:100%;}
   padding:34px 10px;border-bottom:1px solid rgba(255,255,255,0.12);
   transition:background-color .35s ease;position:relative;
 }
-.proj-row:hover{background:rgba(255,255,255,0.03);}
+.proj-row:hover{background:var(--darkgray);}
 .proj-idx{font-family:var(--display);font-size:16px;color:var(--red);}
 .proj-name-wrap .proj-tag{font-family:var(--heading);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--red);opacity:.8;}
 .proj-name{font-family:var(--display);font-size:clamp(24px,3.2vw,40px);text-transform:uppercase;line-height:1;margin-top:6px;}
@@ -1583,7 +1617,7 @@ function populateDeck() {
     
     cardEl.innerHTML = `
       <div style="position: relative; width: 100%; height: 100%; border-radius: 12px; overflow: hidden; background: #FFF;">
-        <!-- Real Image rendered from cirtificates folder -->
+        <!-- Real Image rendered from certificates folder -->
         <img src="${cert.imagePath}" alt="${cert.name}" style="width: 100%; height: 100%; object-fit: contain; background: #FAF8F5; display: block;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
         
         <!-- Premium Fallback Diploma Template if file hasn't been uploaded to folder -->
@@ -1811,3 +1845,6 @@ contactForm.addEventListener('submit', (e)=>{
 </script>
 </body>
 </html>
+
+make mobile view responsive completely also there is minor glitch of loading card stack and modal close button style like image_d1d49e.png.
+give index.html full code.
